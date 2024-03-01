@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클라이언트 -> 서버 메시지 보내기</title>
+</head>
+<body>
+    <input type="text" name="message" id="message">
+    <button id="sendBtn" onclick="send()">send</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        const socket = io.connect("http://localhost:8080", {
+        path: "/socket.io",
+        transports: ["websocket"],
+        });
+        var message = document.getElementById("message");
+
+        function send(){
+            console.log(message.value);
+            socket.emit("message", message.value);
+            document.getElementById("message").value = ""; // 텍스트 입력 후 입력창 비우기
+        }
+    </script>
+</body>
+</html>
