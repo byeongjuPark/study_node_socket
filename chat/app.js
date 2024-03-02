@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 io.on("connection", (socket) => {
     let name = "";
-
+ 
     socket.on("has connected", (username) => {
         name = username;
         users.push(username);

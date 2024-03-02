@@ -113,6 +113,8 @@
         $("#messages").append(
             "<li><i><b>" + data.username + "</b>:"+ data.message +" </i></li>"
         );
+
+        document.querySelector('#display-message-area').scrollTop = document.querySelector('#display-message-area').scrollHeight;
     });
 
 

@@ -108,6 +108,10 @@ html {
     float: right;
     background-color: #aaa;
   }
+
+  #display-message-area{
+    overflow: scroll;
+  }
   
   #chat-area #message-area #display-message-area {
     width: 100%;
